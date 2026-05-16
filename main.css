@@ -2,10 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
-  background-color: #74A9F3;
+  background-color: #74a9f3;
 }
 
 .main_header {
@@ -17,31 +18,59 @@ body {
   text-shadow: 2px 2px 5px black;
 }
 
-
-/* -------------------------------------------- */
 .game_place {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   height: 400px;
   width: 400px;
   margin: 0 auto;
 }
-.komorka{
+
+.komorka {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-right: 10px solid white;
   border-bottom: 10px solid white;
-  transition: .3s;
-}
-.komorka:nth-child(3n){
-  border-right: none;
-}
-.komorka:nth-child(n+7){
-  border-bottom: none;
-}
-.komorka:hover{
-  background-color:  #327de7;
+  transition: 0.3s;
 }
 
+.komorka:nth-child(3n) {
+  border-right: none;
+}
+
+.komorka:nth-child(n+7) {
+  border-bottom: none;
+}
+
+.komorka:hover {
+  background-color: #327de7;
+}
+
+.krzyzyk::before,
+.krzyzyk::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 70%;
+  height: 8px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  animation: rosnij 0.3s ease;
+}
+
+.krzyzyk::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.krzyzyk::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 .btn_new-game {
   position: absolute;
@@ -54,8 +83,8 @@ body {
   width: 180px;
   height: 60px;
   background-color: white;
-  color: #74A9F3;
-  text-shadow: 2px 2px 5px #74A9F3;
+  color: #74a9f3;
+  text-shadow: 2px 2px 5px #74a9f3;
   transition: 0.5s;
   border-radius: 50px;
   font-family: sans-serif;
@@ -64,7 +93,18 @@ body {
 }
 
 .btn_new-game:hover {
-  background-color: #74A9F3;
+  background-color: #74a9f3;
   color: white;
   border: 2px solid white;
-}/*# sourceMappingURL=main.css.map */
+}
+
+@keyframes rosnij {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
