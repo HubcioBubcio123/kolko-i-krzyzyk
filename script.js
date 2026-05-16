@@ -1,5 +1,6 @@
 const komorki = document.querySelectorAll(".komorka")
 const btnNew = document.querySelector(".btn_new-game")
+const tura = document.querySelector(".tura")
 let aktualnyGracz = "O"
 let plansza = ["", "", "", "", "", "", "", "", ""]
 let koniecGry = false
@@ -28,7 +29,13 @@ function sprawdzWygrana() {
 komorki.forEach(function(komorka,index) {
     komorka.addEventListener("click", function() {
         if(koniecGry) return
-
+        if(aktualnyGracz === "X"){
+            tura.textContent = "Aktualna tura: O"
+        }else{
+            tura.textContent = "Aktualna tura: X" 
+        }
+       
+       
         if(komorka.classList.contains("krzyzyk") || komorka.querySelector("svg")){
             return
         }
@@ -63,7 +70,7 @@ btnNew.addEventListener("click", function() {
     koniecGry = false
     aktualnyGracz = "O"
     plansza = ["", "", "", "", "", "", "", "", ""]
-    
+    tura.textContent = "Aktualna tura: O"
     komorki.forEach(function(komorka, index) {
         setTimeout(function() {
             komorka.classList.remove("krzyzyk")
