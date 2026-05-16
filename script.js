@@ -28,6 +28,7 @@ function sprawdzWygrana() {
 komorki.forEach(function(komorka,index) {
     komorka.addEventListener("click", function() {
         if(koniecGry) return
+
         if(komorka.classList.contains("krzyzyk") || komorka.querySelector("svg")){
             return
         }
@@ -59,12 +60,16 @@ komorki.forEach(function(komorka,index) {
 })
 
 btnNew.addEventListener("click", function() {
-    komorki.forEach(function(komorka) {
-    komorka.classList.remove("krzyzyk")
-    komorka.innerHTML = ""
-    plansza = ["", "", "", "", "", "", "", "", ""]
     koniecGry = false
-})
+    aktualnyGracz = "O"
+    plansza = ["", "", "", "", "", "", "", "", ""]
+    
+    komorki.forEach(function(komorka, index) {
+        setTimeout(function() {
+            komorka.classList.remove("krzyzyk")
+            komorka.innerHTML = ""
+        }, index * 100)
+    })
   
 })
 
