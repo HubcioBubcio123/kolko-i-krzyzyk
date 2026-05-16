@@ -99,6 +99,30 @@ circle {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.wygrana {
+  background-color: gold;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.623);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.overlay.active {
+  opacity: 1;
+}
+
 .btn_new-game {
   position: absolute;
   display: flex;

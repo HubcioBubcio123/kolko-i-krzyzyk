@@ -19,7 +19,18 @@ function sprawdzWygrana() {
         const [a, b, c] = kombinacje[i]
         
         if(plansza[a] !== "" && plansza[a] === plansza[b] && plansza[a] === plansza[c]) {
-            alert(plansza[a] + " wygrywa!")
+            komorki[a].classList.add("wygrana")
+            komorki[b].classList.add("wygrana")
+            komorki[c].classList.add("wygrana")
+            const overlay = document.querySelector(".overlay")
+            const overlayText = document.querySelector(".overlay__text")
+
+            overlayText.textContent = plansza[a] + " wygrywa!"
+            overlay.classList.add("active")
+
+            setTimeout(function() {
+             overlay.classList.remove("active")
+            }, 2000)
             koniecGry = true 
             return true
         }
@@ -61,7 +72,7 @@ komorki.forEach(function(komorka,index) {
       aktualnyGracz = "X"
     }
     
-    
+
 })
 
 })
@@ -75,6 +86,7 @@ btnNew.addEventListener("click", function() {
         setTimeout(function() {
             komorka.classList.remove("krzyzyk")
             komorka.innerHTML = ""
+            komorka.classList.remove("wygrana")
         }, index * 100)
     })
   
