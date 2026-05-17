@@ -33,6 +33,18 @@ function sprawdzWygrana() {
             }, 2000)
             koniecGry = true 
             return true
+        }else if(plansza.every(function(pole) { return pole !== "" })){
+            const overlay = document.querySelector(".overlay")
+            const overlayText = document.querySelector(".overlay__text")
+
+            overlayText.textContent =  " remis!"
+            overlay.classList.add("active")
+
+            setTimeout(function() {
+             overlay.classList.remove("active")
+            }, 2000)
+            koniecGry = true 
+            return true
         }
     }
     return false
