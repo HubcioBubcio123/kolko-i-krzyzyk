@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
 header {
@@ -81,5 +82,5 @@ main {
 .karta:hover {
 	filter: blur(0px) !important;
     transform: scale(1.25);
-    transition: transform 0.5s ease, filter 0.5s ease;
+	transition: transform 0.5s ease, filter 0.5s ease;
 }

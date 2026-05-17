@@ -72,7 +72,6 @@ komorki.forEach(function(komorka,index) {
       aktualnyGracz = "X"
     }
     
-
 })
 
 })
