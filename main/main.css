@@ -7,25 +7,49 @@
 
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  box-shadow: 0 1px 4px black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  gap: 0.5rem;
+  padding: 3rem 0;
+  background: radial-gradient(ellipse 20% 80% at 50% 50%, #1d1d1d 40%, transparent 70%);
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(0, 150, 255, 0.7);
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+.main-tekst {
+  font-size: 70px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 150, 255, 0.5);
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  font-size: px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 80px - 50px);
-}
-
-.main-tekst {
-  font-family: sans-serif;
-  font-size: 50px;
+  min-height: calc(100vh - 260px - 100px);
 }
 
 .container {
@@ -46,13 +70,14 @@ main {
   cursor: pointer;
   transition: transform 0.5s ease, filter 0.5s ease;
   box-shadow: 0px 1px 4px black;
+  background-color: white;
 }
 
 .karta img {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -110,9 +135,53 @@ footer {
   align-items: center;
   bottom: 0;
   width: 100%;
-  box-shadow: 1px 1px 4px black;
 }
 
 footer p {
   font-weight: bold;
+  color: white;
+}
+
+.bgAnimation {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  background: #1d1d1d;
+  filter: saturate(2);
+  overflow: hidden;
+}
+
+.colorBox {
+  z-index: 2;
+  filter: brightness(1.1);
+  transition: 2s ease;
+  position: relative;
+  margin: 2px;
+  background: #1d1d1d;
+}
+
+.backgroundAmim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: white;
+  filter: blur(30px);
+  animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+  0% {
+    top: -60px;
+  }
+  100% {
+    top: 120%;
+  }
 }/*# sourceMappingURL=main.css.map */
