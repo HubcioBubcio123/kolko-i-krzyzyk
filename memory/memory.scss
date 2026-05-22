@@ -71,8 +71,24 @@ canvas#particles {
     font-size: 30px;
 }
  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+ 
 .nowa-gra {
+  margin: 20px;
+  padding: 10px 30px;
+  border-radius: 8px;
   cursor: pointer;
   background-color: rgba(255,255,255,0.08);
   border: 0.5px solid rgba(255,255,255,0.15);
+  color: white;
+  transition: background 0.5s ease;
+ 
+  &:hover {
+    background-color: rgba(255,255,255,0.15);
+  }
 }

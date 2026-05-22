@@ -60,3 +60,36 @@ setInterval(() => {
  
 let pary = 0;
 document.querySelector('.pary-liczba').textContent = `${pary}/8`;   
+
+let ruchy = 0;
+document.querySelector('.ruchy-liczba').textContent = ruchy;
+ 
+let timer;
+let sekundy = 0;
+ 
+timer = setInterval(() => {
+  sekundy++;
+  const min = Math.floor(sekundy / 60);
+  const sek = sekundy % 60;
+  document.querySelector('.czas-liczba').textContent = `${min}:${sek.toString().padStart(2, '0')}`;
+}, 1000);
+ 
+const przycisk = document.querySelector('.nowa-gra');
+ 
+const reset = () => {
+  ruchy = 0;
+  sekundy = 0;
+  pary = 0;
+  clearInterval(timer);
+  timer = setInterval(() => {
+    sekundy++;
+    const min = Math.floor(sekundy / 60);
+    const sek = sekundy % 60;
+    document.querySelector('.czas-liczba').textContent = `${min}:${sek.toString().padStart(2, '0')}`;
+  }, 1000);
+  document.querySelector('.ruchy-liczba').textContent = ruchy;
+  document.querySelector('.pary-liczba').textContent = `${pary}/8`;
+  document.querySelector('.czas-liczba').textContent = '0:00';
+}
+ 
+przycisk.addEventListener('click', reset);
