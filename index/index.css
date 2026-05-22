@@ -1,8 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -11,11 +10,11 @@ body {
 }
 
 h1 {
-  font-family: 'Gordita';
+  font-family: "Gordita";
 }
 
 h2 {
-  font-family: 'gordita';
+  font-family: "gordita";
   text-align: center;
   margin-bottom: 20px;
   color: white;
@@ -29,14 +28,12 @@ i {
   font-size: 65px;
   margin-left: 100px;
   margin-top: 20px;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   text-shadow: 2px 2px 5px black;
 }
 
 i:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
   cursor: pointer;
   text-shadow: 2px 2px 5px #ffffff;
 }
@@ -54,12 +51,9 @@ circle {
   stroke-width: 15;
   stroke-dasharray: 253;
   stroke-dashoffset: 253;
-  -webkit-animation: rysujKolko 0.5s ease forwards;
-          animation: rysujKolko 0.5s ease forwards;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  animation: rysujKolko 0.5s ease forwards;
+  transform-origin: center;
+  transform: rotate(-90deg);
 }
 
 .main_header {
@@ -72,12 +66,9 @@ circle {
 }
 
 .game_place {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   height: 400px;
   width: 400px;
   margin: 0 auto;
@@ -85,19 +76,12 @@ circle {
 
 .komorka {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-right: 10px solid white;
   border-bottom: 10px solid white;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
   min-height: 0;
@@ -108,7 +92,7 @@ circle {
   border-right: none;
 }
 
-.komorka:nth-child(n + 7) {
+.komorka:nth-child(n+7) {
   border-bottom: none;
 }
 
@@ -118,29 +102,25 @@ circle {
 
 .krzyzyk::before,
 .krzyzyk::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
   width: 70%;
   height: 8px;
   background-color: white;
   border: 2px solid white;
   border-radius: 10px;
-  -webkit-animation: rosnij 0.3s ease;
-          animation: rosnij 0.3s ease;
+  animation: rosnij 0.3s ease;
 }
 
 .krzyzyk::before {
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .krzyzyk::after {
-  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-          transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .wygrana {
@@ -153,19 +133,12 @@ circle {
   left: 0;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.623);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 10;
 }
@@ -176,46 +149,28 @@ circle {
 
 .btn_new-game {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   top: 85%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 180px;
   height: 60px;
   background-color: white;
   color: #74a9f3;
   text-shadow: 2px 2px 5px #74a9f3;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 50px;
   font-family: sans-serif;
   cursor: pointer;
-  -webkit-box-shadow: 0 1px 4px white;
-          box-shadow: 0 1px 4px white;
+  box-shadow: 0 1px 4px white;
 }
 
 .btn_new-game:hover {
   background-color: #74a9f3;
   color: white;
   border: 2px solid white;
-}
-
-@-webkit-keyframes rosnij {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
 }
 
 @keyframes rosnij {
@@ -226,16 +181,6 @@ circle {
     width: 70%;
   }
 }
-
-@-webkit-keyframes rysujKolko {
-  from {
-    stroke-dashoffset: 253;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes rysujKolko {
   from {
     stroke-dashoffset: 253;
@@ -244,7 +189,6 @@ circle {
     stroke-dashoffset: 0;
   }
 }
-
 .wrapper {
   position: fixed;
   top: 0;
@@ -273,13 +217,12 @@ circle {
 
 .box div.krzyzyk::before,
 .box div.krzyzyk::after {
-  content: '';
+  content: "";
   position: absolute;
   background: white;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .box div.krzyzyk::before {
@@ -295,96 +238,70 @@ circle {
 .box div:nth-child(1) {
   top: 12%;
   left: 42%;
-  -webkit-animation: animate 10s linear infinite;
-          animation: animate 10s linear infinite;
+  animation: animate 10s linear infinite;
 }
 
 .box div:nth-child(2) {
   top: 70%;
   left: 50%;
-  -webkit-animation: animate 7s linear infinite;
-          animation: animate 7s linear infinite;
+  animation: animate 7s linear infinite;
 }
 
 .box div:nth-child(3) {
   top: 17%;
   left: 6%;
-  -webkit-animation: animate 9s linear infinite;
-          animation: animate 9s linear infinite;
+  animation: animate 9s linear infinite;
 }
 
 .box div:nth-child(4) {
   top: 20%;
   left: 60%;
-  -webkit-animation: animate 10s linear infinite;
-          animation: animate 10s linear infinite;
+  animation: animate 10s linear infinite;
 }
 
 .box div:nth-child(5) {
   top: 67%;
   left: 10%;
-  -webkit-animation: animate 6s linear infinite;
-          animation: animate 6s linear infinite;
+  animation: animate 6s linear infinite;
 }
 
 .box div:nth-child(6) {
   top: 80%;
   left: 70%;
-  -webkit-animation: animate 12s linear infinite;
-          animation: animate 12s linear infinite;
+  animation: animate 12s linear infinite;
 }
 
 .box div:nth-child(7) {
   top: 60%;
   left: 80%;
-  -webkit-animation: animate 15s linear infinite;
-          animation: animate 15s linear infinite;
+  animation: animate 15s linear infinite;
 }
 
 .box div:nth-child(8) {
   top: 32%;
   left: 25%;
-  -webkit-animation: animate 16s linear infinite;
-          animation: animate 16s linear infinite;
+  animation: animate 16s linear infinite;
 }
 
 .box div:nth-child(9) {
   top: 90%;
   left: 25%;
-  -webkit-animation: animate 9s linear infinite;
-          animation: animate 9s linear infinite;
+  animation: animate 9s linear infinite;
 }
 
 .box div:nth-child(10) {
   top: 20%;
   left: 80%;
-  -webkit-animation: animate 12s linear infinite;
-          animation: animate 12s linear infinite;
-}
-
-@-webkit-keyframes animate {
-  0% {
-    -webkit-transform: scale(0) translateY(0) rotate(0deg);
-            transform: scale(0) translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.3) translateY(-90px) rotate(360deg);
-            transform: scale(1.3) translateY(-90px) rotate(360deg);
-    opacity: 0;
-  }
+  animation: animate 12s linear infinite;
 }
 
 @keyframes animate {
   0% {
-    -webkit-transform: scale(0) translateY(0) rotate(0deg);
-            transform: scale(0) translateY(0) rotate(0deg);
+    transform: scale(0) translateY(0) rotate(0deg);
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(1.3) translateY(-90px) rotate(360deg);
-            transform: scale(1.3) translateY(-90px) rotate(360deg);
+    transform: scale(1.3) translateY(-90px) rotate(360deg);
     opacity: 0;
   }
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
