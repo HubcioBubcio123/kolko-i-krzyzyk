@@ -37,7 +37,7 @@ function draw() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.fillStyle = ` rgba(255,255,255,${alpha})`;//rgb(123, 255, 0)
     ctx.fill();
   });
 
@@ -46,6 +46,9 @@ function draw() {
 
 draw();
 
+//<--------------------------------------------GRA / LOGIKA------------------------------------?
+
+//logika gry
 let ruchy = 0;
 let sekundy = 0;
 let pary = 0;

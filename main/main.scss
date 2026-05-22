@@ -131,20 +131,29 @@ main {
 .karta-1:hover:after {
 	width: 50%;
 }
-
-footer {
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.karta-2::before,
+.karta-2::after {
+	content: '';
+	position: absolute;
+	width: 0;
 	bottom: 0;
-	width: 100%;
+	border-bottom: 5px solid rgb(61, 122, 4);
+	transition: 0.3s;
 }
 
-footer p {
-	font-weight: bold;
-	color: white;
+.karta-2::before {
+	right: 50%;
 }
+
+.karta-2::after {
+	left: 50%;
+}
+
+.karta-2:hover:before,
+.karta-2:hover:after {
+	width: 50%;
+}
+
 
 .bgAnimation {
 	z-index: -1;
@@ -181,6 +190,19 @@ footer p {
 	animation: animBack 6s linear infinite;
 }
 
+footer {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p {
+	font-weight: bold;
+	color: white;
+}
 @keyframes animBack {
 	0% {
 		top: -60px;
