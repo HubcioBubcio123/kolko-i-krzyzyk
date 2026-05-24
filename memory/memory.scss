@@ -45,8 +45,8 @@ canvas#particles {
  
 .wrapper {
     display: flex;
-    padding: 32px;
-    gap: 20px;
+    padding: 10px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -73,14 +73,16 @@ canvas#particles {
 }
  
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
     padding: 32px;
+    max-width: 700px;
+    margin: 0 auto;
 }
  
 .nowa-gra {
-  margin: 20px;
+  margin:20px auto;
   padding: 10px 30px;
   border-radius: 8px;
   cursor: pointer;
@@ -88,18 +90,48 @@ canvas#particles {
   border: 0.5px solid rgba(255,255,255,0.15);
   color: white;
   transition: background , box-shadow 0.5s ease;
-    
+ display: block;
+
   
   &:hover {
       background-color: rgba(255,255,255,0.15);
     
-    //PROPOZYCJE NA ANIMACJE PRZYCISKU
-      //   box-shadow: 
-    //       0 0 5px #fff,
-    //       0 0 8px #fff,
-    //       0 0 15px rgb(123, 255, 0),
-    //       0 0 20px rgb(123, 255, 0),
-    //       0 0 40px rgb(123, 255, 0);
+        box-shadow: 
+          0 0 5px #fff,
+          0 0 8px #fff,
+          0 0 15px rgb(123, 255, 0),
+          0 0 20px rgb(123, 255, 0),
+          0 0 40px rgb(123, 255, 0);
  }
       
+}
+.karta {
+    cursor: pointer;
+    
+    img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
+}
+.karta__przod{
+    display: none;
+}
+.karta.odkryta .karta__przod {
+    display: block;
+}
+.karta__tyl {
+    display: block;
+    content: url(../img/znak\ zapytania.png);
+
+         width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+}
+.karta.odkryta .karta__tyl {
+    display: none;
 }

@@ -70,7 +70,17 @@ main {
   cursor: pointer;
   transition: transform 0.5s ease, filter 0.5s ease;
   box-shadow: 0px 1px 4px black;
+}
+
+.karta-1 {
   background-color: white;
+}
+
+.karta-2 {
+  background-color: #1d1d1d;
+}
+.karta-2 p {
+  color: white;
 }
 
 .karta img {
